@@ -58,6 +58,13 @@ toggleTodo= todoId => {
   })
 }
 
+clearCompleted = e => {
+  e.preventDefault();
+  this.setState({
+    Todos: this.state.Todos.filter(todo => !todo.completed)
+  });
+};
+
   render() {
     console.log("rendering...");
     return (
@@ -67,7 +74,9 @@ toggleTodo= todoId => {
           <TodoForm addTodo={this.addTodo} />
         </div>
         <TodoList
-          todos={this.state.todos}
+          todos={this.state.Todos}
+          toggleTodo={this.toggleTodo}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );
