@@ -42,6 +42,22 @@ addTodo = (e, todo) => {
   });
 };
 
+toggleTodo= todoId => {
+  console.log(todoId);
+
+  this.setState({
+    Todos: this.state.Todos.map(todo => {
+      if(todoId === todo.id) {
+        return {
+          ...todo,
+          completed: !todo.completed
+        };
+      }
+      return todo;
+    })
+  })
+}
+
   render() {
     console.log("rendering...");
     return (
