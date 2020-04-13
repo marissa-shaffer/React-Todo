@@ -46,7 +46,7 @@ toggleTodo= todoId => {
   console.log(todoId);
 
   this.setState({
-    Todos: this.state.Todos.map(todo => {
+    todos: this.state.todos.map(todo => {
       if(todoId === todo.id) {
         return {
           ...todo,
@@ -61,7 +61,7 @@ toggleTodo= todoId => {
 clearCompleted = e => {
   e.preventDefault();
   this.setState({
-    Todos: this.state.Todos.filter(todo => !todo.completed)
+    todos: this.state.todos.filter(todo => !todo.completed)
   });
 };
 
