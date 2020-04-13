@@ -21,7 +21,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      Todos
+      todos: Todos 
     }
   }
   // you will need a place to store your state in this component.
@@ -74,7 +74,7 @@ clearCompleted = e => {
           <TodoForm addTodo={this.addTodo} />
         </div>
         <TodoList
-          todos={this.state.Todos}
+          todos={this.state.todos}
           toggleTodo={this.toggleTodo}
           clearCompleted={this.clearCompleted}
         />
